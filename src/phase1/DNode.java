@@ -1,5 +1,3 @@
-//Hola esto es un comentario 
-
 package phase1;
 
 public class DNode {
