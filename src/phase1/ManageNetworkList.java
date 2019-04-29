@@ -28,7 +28,7 @@ public class ManageNetworkList implements IManageNetworkList {
 			}
 		}
 
-		return resultList;//hjfdd
+		return resultList;
 	}
 
 	/**
@@ -87,11 +87,13 @@ public class ManageNetworkList implements IManageNetworkList {
 
 		if(opc == 1) {
 			for(DNode node = lst.header.next; node != lst.trailer; node = node.next) {
-				sortedList.node.elem.email.compareTo(node.next.elem.email);
-				//sortedList.addLast(compareTo(node.elem.email));
+				if(node.elem.email.compareTo(node.next.elem.email) < 1);
+				
+					
+				}
 			}
 				
-		}
+		
 		return sortedList;
 	}
 
@@ -118,7 +120,12 @@ public class ManageNetworkList implements IManageNetworkList {
 	public StudentsList locateByCity(StudentsList lst, String city) {
 
 		StudentsList l = new StudentsList();
-		// To complete
+		for(DNode node = lst.header.next; node != lst.trailer; node = node.next) {
+			if(node.elem.city.equalsIgnoreCase(city)) {
+				l.addLast(node.elem);
+			}
+			
+		}	
 		return l;
 
 	}
@@ -139,7 +146,6 @@ public class ManageNetworkList implements IManageNetworkList {
 	public StudentsList getStudentsByDateInterval(StudentsList lst, LocalDate start, LocalDate end) {
 		StudentsList resultList = new StudentsList();
 
-		// To complete
 		return resultList;
 
 	}
