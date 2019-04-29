@@ -2,8 +2,6 @@ package phase1;
 
 import java.time.LocalDate;
 
-import java.util.Collections;
-
 public class ManageNetworkList implements IManageNetworkList {
 
 	/**
@@ -30,7 +28,7 @@ public class ManageNetworkList implements IManageNetworkList {
 			}
 		}
 
-		return resultList;
+		return resultList;//hjfdd
 	}
 
 	/**
@@ -89,7 +87,8 @@ public class ManageNetworkList implements IManageNetworkList {
 
 		if(opc == 1) {
 			for(DNode node = lst.header.next; node != lst.trailer; node = node.next) {
-				sortedList.addLast(Collections.sort(node.elem.email));
+				sortedList.node.elem.email.compareTo(node.next.elem.email);
+				//sortedList.addLast(compareTo(node.elem.email));
 			}
 				
 		}
