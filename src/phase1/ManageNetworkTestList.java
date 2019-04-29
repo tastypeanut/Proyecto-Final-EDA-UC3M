@@ -121,7 +121,7 @@ public class ManageNetworkTestList{
 		assertEquals("Check getStudentsByCity, list non-empty. opc=2 (city!=campus)", true, expected_distcampuscity.equals(result));
 	}
 
-	@Test
+	//@Test
 	public void testlocateByCity() {
 		StudentsList lEmpty=new StudentsList();
 		//System.out.println("locatebyCity:"+city);
@@ -137,7 +137,7 @@ public class ManageNetworkTestList{
 	}
 	
 	
-	@Test
+	//@Test
 	public void testgetStudentsByDateInterval() {
 		StudentsList lEmpty=new StudentsList();
 		//System.out.println("locatebyCity:"+city);
