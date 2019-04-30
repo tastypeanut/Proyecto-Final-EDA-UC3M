@@ -14,7 +14,9 @@ public class ManageNetworkList implements IManageNetworkList {
 	 * @param lst2
 	 * @return
 	 */
+	
 	public StudentsList union(StudentsList lst1, StudentsList lst2) {
+		
 		StudentsList resultList = new StudentsList();
 
 		if (lst1 != null) {
@@ -29,6 +31,7 @@ public class ManageNetworkList implements IManageNetworkList {
 		}
 
 		return resultList;
+		
 	}
 
 	/**
@@ -44,6 +47,7 @@ public class ManageNetworkList implements IManageNetworkList {
 	 * @param opc
 	 * @return
 	 */
+	
 	public StudentsList getCampusCity(StudentsList lst, int opc) {
 
 		StudentsList l = new StudentsList();
@@ -61,7 +65,7 @@ public class ManageNetworkList implements IManageNetworkList {
 			}
 		}
 		return l;
-
+		
 	}
 
 	/**
@@ -80,6 +84,7 @@ public class ManageNetworkList implements IManageNetworkList {
 	 * @param opc
 	 * @return
 	 */
+	
 	public StudentsList orderBy(StudentsList lst, int opc) {
 
 		StudentsList sortedList = new StudentsList();
@@ -87,6 +92,7 @@ public class ManageNetworkList implements IManageNetworkList {
 				sortedInsert(sortedList, node1.elem, opc);
 			}
 		return sortedList;
+		
 	}
 
 	/**
@@ -96,7 +102,9 @@ public class ManageNetworkList implements IManageNetworkList {
 	 * @param newStudent
 	 * @param opc
 	 */
+	
 	public static void sortedInsert(StudentsList lst, Student newStudent, int opc) {
+		
 		switch (opc){
 			case 1:
 				int contador=0;
@@ -131,6 +139,7 @@ public class ManageNetworkList implements IManageNetworkList {
 				}
 			break;
 		}
+		
 	}
 
 	/**
@@ -142,6 +151,7 @@ public class ManageNetworkList implements IManageNetworkList {
 	 * @param city
 	 * @return
 	 */
+	
 	public StudentsList locateByCity(StudentsList lst, String city) {
 
 		StudentsList l = new StudentsList();
@@ -168,7 +178,9 @@ public class ManageNetworkList implements IManageNetworkList {
 	 * @param end
 	 * @return
 	 */
+	
 	public StudentsList getStudentsByDateInterval(StudentsList lst, LocalDate start, LocalDate end) {
+		
 		StudentsList resultList = new StudentsList();
 
 		for (DNode node = lst.header.next; node != lst.trailer; node = node.next) {
@@ -179,23 +191,23 @@ public class ManageNetworkList implements IManageNetworkList {
 			}
 		}
 		return resultList;
+		
 	}
 
 	/*
-	 * public static void main(String[] args) {
-	 * 
-	 * ManageNetworkList n1 = new ManageNetworkList(); StudentsList lst1 = new
-	 * StudentsList(); StudentsList lst2 = new StudentsList(); LocalDate d1 = new
-	 * LocalDate(2010, 1, 1);
-	 * 
-	 * //Campus c1 = new Campus(); Student s1 = new Student("isa@uc3m.es", "getafe",
-	 * GETAFE , d1);
-	 * 
-	 * lst1.addLast(s1);
-	 * 
-	 * System.out.println(n1.union(lst1, lst2));
-	 * 
-	 * }
+	 public static void main(String[] args) {
+	 
+	 ManageNetworkList n1 = new ManageNetworkList(); StudentsList lst1 = new
+	 StudentsList(); StudentsList lst2 = new StudentsList(); LocalDate d1 = new LocalDate(2010, 1, 1);
+	 
+	 StudentList c1 = new StudentList(); 
+	 Student s1 = new Student("isa@uc3m.es", "getafe", campus.GETAFE , d1);
+	 
+	 lst1.addLast(s1);
+	 
+	 System.out.println(n1.union(lst1, lst2));
+	 
+	 }
 	 */
-
+	
 }
