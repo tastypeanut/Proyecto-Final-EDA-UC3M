@@ -83,16 +83,9 @@ public class ManageNetworkList implements IManageNetworkList {
 	public StudentsList orderBy(StudentsList lst, int opc) {
 
 		StudentsList sortedList = new StudentsList();
-
-		if (opc == 1) {
 			for (DNode node1 = lst.header.next; node1 != lst.trailer; node1 = node1.next) {
-				for(DNode node2 = ls)
-				if (node.elem.email.compareTo(node.next.elem.email) < 1)
-					;
-
+				sortedInsert(sortedList, node1.elem, opc);
 			}
-		}
-
 		return sortedList;
 	}
 
@@ -104,9 +97,40 @@ public class ManageNetworkList implements IManageNetworkList {
 	 * @param opc
 	 */
 	public static void sortedInsert(StudentsList lst, Student newStudent, int opc) {
-		for (DNode node1 = lst.header.next; node1 != lst.trailer; node1 = node1.next) {
-			for(DNode node2 = ls)
-	
+		switch (opc){
+			case 1:
+				int contador=0;
+				for (DNode node1 = lst.header.next; node1 != lst.trailer; node1 = node1.next) {
+					if (lst.isEmpty() || node1.prev == lst.header && node1.elem.email.compareTo(newStudent.email) >= 0) {
+						lst.addFirst(newStudent);
+						break;
+					} else if(!(node1.prev == lst.header || node1.next == lst.trailer) && node1.prev.elem.email.compareTo(newStudent.email) < 0 && node1.elem.email.compareTo(newStudent.email) >= 0){
+						lst.insertAt(contador, newStudent);
+						break;
+					} else if (node1.next == lst.trailer && node1.elem.email.compareTo(newStudent.email) < 0) {
+						lst.addLast(newStudent);
+						break;
+					}
+					contador++;
+				}
+			break;
+			case 2:
+				int contador1=0;
+				for (DNode node1 = lst.header.next; node1 != lst.trailer; node1 = node1.next) {
+					if (lst.isEmpty() || node1.prev == lst.header && node1.elem.email.compareTo(newStudent.email) <= 0) {
+						lst.addFirst(newStudent);
+						break;
+					} else if(!(node1.prev == lst.header || node1.next == lst.trailer) && node1.prev.elem.email.compareTo(newStudent.email) > 0 && node1.elem.email.compareTo(newStudent.email) <= 0){
+						lst.insertAt(contador1, newStudent);
+						break;
+					} else if (node1.next == lst.trailer && node1.elem.email.compareTo(newStudent.email) > 0) {
+						lst.addLast(newStudent);
+						break;
+					}
+					contador1++;
+				}
+			break;
+		}
 	}
 
 	/**
