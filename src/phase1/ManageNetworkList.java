@@ -7,7 +7,7 @@ public class ManageNetworkList implements IManageNetworkList {
 	/**
 	 * The methods must join two social networks into a single social network. The
 	 * method takes two objects of the StudentsList and returns a new list
-	 * containing first the students from the first list followed by the students
+	 * containing first the s tudents from the first list followed by the students
 	 * from the second list.
 	 * 
 	 * @param lst1
@@ -16,14 +16,14 @@ public class ManageNetworkList implements IManageNetworkList {
 	 */
 	public StudentsList union(StudentsList lst1, StudentsList lst2) {
 		StudentsList resultList = new StudentsList();
-		
-		if(lst1 != null) {
+
+		if (lst1 != null) {
 			for (DNode node = lst1.header.next; node != lst1.trailer; node = node.next) {
 				resultList.addLast(node.elem);
 			}
 		}
-		if(lst2!=null) {
-			for(DNode node = lst2.header.next; node != lst2.trailer; node = node.next) {
+		if (lst2 != null) {
+			for (DNode node = lst2.header.next; node != lst2.trailer; node = node.next) {
 				resultList.addLast(node.elem);
 			}
 		}
@@ -47,19 +47,18 @@ public class ManageNetworkList implements IManageNetworkList {
 	public StudentsList getCampusCity(StudentsList lst, int opc) {
 
 		StudentsList l = new StudentsList();
-		if(opc == 1) {
-			for(DNode node = lst.header.next; node != lst.trailer; node = node.next) {
-				if(node.elem.city.equalsIgnoreCase(node.elem.campus.name())) {
+		if (opc == 1) {
+			for (DNode node = lst.header.next; node != lst.trailer; node = node.next) {
+				if (node.elem.city.equalsIgnoreCase(node.elem.campus.name())) {
 					l.addLast(node.elem);
 				}
 			}
-		}
-		else if(opc == 2) {
-				for(DNode node = lst.header.next; node != lst.trailer; node = node.next) {
-					if(!(node.elem.city.equalsIgnoreCase(node.elem.campus.name()))) {
-						l.addLast(node.elem);
-					}
+		} else if (opc == 2) {
+			for (DNode node = lst.header.next; node != lst.trailer; node = node.next) {
+				if (!(node.elem.city.equalsIgnoreCase(node.elem.campus.name()))) {
+					l.addLast(node.elem);
 				}
+			}
 		}
 		return l;
 
@@ -85,15 +84,15 @@ public class ManageNetworkList implements IManageNetworkList {
 
 		StudentsList sortedList = new StudentsList();
 
-		if(opc == 1) {
-			for(DNode node = lst.header.next; node != lst.trailer; node = node.next) {
-				if(node.elem.email.compareTo(node.next.elem.email) < 1);
-				
-					
-				}
+		if (opc == 1) {
+			for (DNode node1 = lst.header.next; node1 != lst.trailer; node1 = node1.next) {
+				for(DNode node2 = ls)
+				if (node.elem.email.compareTo(node.next.elem.email) < 1)
+					;
+
 			}
-				
-		
+		}
+
 		return sortedList;
 	}
 
@@ -105,7 +104,9 @@ public class ManageNetworkList implements IManageNetworkList {
 	 * @param opc
 	 */
 	public static void sortedInsert(StudentsList lst, Student newStudent, int opc) {
-		// To complete
+		for (DNode node1 = lst.header.next; node1 != lst.trailer; node1 = node1.next) {
+			for(DNode node2 = ls)
+	
 	}
 
 	/**
@@ -120,12 +121,12 @@ public class ManageNetworkList implements IManageNetworkList {
 	public StudentsList locateByCity(StudentsList lst, String city) {
 
 		StudentsList l = new StudentsList();
-		for(DNode node = lst.header.next; node != lst.trailer; node = node.next) {
-			if(node.elem.city.equalsIgnoreCase(city)) {
+		for (DNode node = lst.header.next; node != lst.trailer; node = node.next) {
+			if (node.elem.city.equalsIgnoreCase(city)) {
 				l.addLast(node.elem);
 			}
-			
-		}	
+
+		}
 		return l;
 
 	}
@@ -146,12 +147,31 @@ public class ManageNetworkList implements IManageNetworkList {
 	public StudentsList getStudentsByDateInterval(StudentsList lst, LocalDate start, LocalDate end) {
 		StudentsList resultList = new StudentsList();
 
+		for (DNode node = lst.header.next; node != lst.trailer; node = node.next) {
+			if (node.elem.date_sign_in.equals(start) || node.elem.date_sign_in.equals(end)) {
+				resultList.addLast(node.elem);
+			} else if (node.elem.date_sign_in.isAfter(start) && node.elem.date_sign_in.isBefore(end)) {
+				resultList.addLast(node.elem); // Hemos utilizado el metodo .isBefore para comparar las fechas.
+			}
+		}
 		return resultList;
-
 	}
 
-	public static void main(String[] args) {
-
-	}
+	/*
+	 * public static void main(String[] args) {
+	 * 
+	 * ManageNetworkList n1 = new ManageNetworkList(); StudentsList lst1 = new
+	 * StudentsList(); StudentsList lst2 = new StudentsList(); LocalDate d1 = new
+	 * LocalDate(2010, 1, 1);
+	 * 
+	 * //Campus c1 = new Campus(); Student s1 = new Student("isa@uc3m.es", "getafe",
+	 * GETAFE , d1);
+	 * 
+	 * lst1.addLast(s1);
+	 * 
+	 * System.out.println(n1.union(lst1, lst2));
+	 * 
+	 * }
+	 */
 
 }

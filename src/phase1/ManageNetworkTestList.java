@@ -137,7 +137,7 @@ public class ManageNetworkTestList{
 	}
 	
 	
-	//@Test
+	@Test
 	public void testgetStudentsByDateInterval() {
 		StudentsList lEmpty=new StudentsList();
 		//System.out.println("locatebyCity:"+city);
