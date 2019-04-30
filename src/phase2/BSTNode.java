@@ -2,7 +2,6 @@ package phase2;
 //these packages are used to implement the showLevel method
 //the interface for a queue
 import java.util.Queue;
-
 import phase1.Student;
 
 //the implementation of a Queue
@@ -12,7 +11,6 @@ public class BSTNode implements IBSTNode {
 
 	String key;
 	Student oStudent;
-	
 	//reference to its parent
 	BSTNode parent;
 	//reference to its left child

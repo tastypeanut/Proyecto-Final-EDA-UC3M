@@ -10,7 +10,6 @@ public interface IBSTree {
 	
 	public void removeStudent(String username);
 	
-	
 	public int getSize();
 
 	public int getHeight();
