@@ -30,8 +30,7 @@ public class ManageNetworkTree implements IManageNetworkTree {
 	public StudentsList getOrderedList(StudentsTree tree){
 		
         StudentsList sL = new StudentsList();
-       
-        //To complete
+        
         return sL;
     }
 
@@ -42,10 +41,20 @@ public class ManageNetworkTree implements IManageNetworkTree {
 	 * @param num
 	 */
 	
-	public void deleteByNumberOfBlocks(StudentsTree tree,int num) {
-       //To complete
+	public void deleteByNumberOfBlocks(StudentsTree tree, int num) {
+		BSTNode root = tree.root;
+		preorder(root, num, tree);
 	}
-
+	
+	public void preorder(BSTNode node, int n, StudentsTree tree) {
+		if (node != null) {
+			preorder(node.left, n, tree);
+			preorder(node.right, n, tree);
+			if (node.oStudent.blocks >= n) {
+				tree.removeStudent(node.oStudent.email);
+			}
+		}
+	}
 	
 
 }

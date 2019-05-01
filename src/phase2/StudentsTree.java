@@ -3,7 +3,6 @@ package phase2;
 
 
 import java.time.LocalDate;
-
 import phase1.Student;
 
 public class StudentsTree implements IBSTree {
@@ -103,6 +102,7 @@ public class StudentsTree implements IBSTree {
 	 * @param currentNode
 	 * @return
 	 */
+	
 	protected static BSTNode remove(String key, BSTNode currentNode) {
 		if (currentNode == null) {
 			System.out.println("Cannot remove: The key doesn't exist");
@@ -113,7 +113,7 @@ public class StudentsTree implements IBSTree {
 			currentNode.left=remove(key,currentNode.left);
 			return currentNode;
 		}
-		
+
 		if (key.compareTo(currentNode.key)>0) {
 			currentNode.right=remove(key,currentNode.right);
 			return currentNode;
