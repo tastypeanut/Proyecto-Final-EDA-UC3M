@@ -63,6 +63,7 @@ public class ManageNetworkGraph implements IManageNetworkGraph {
 	 * @param studentA
 	 * @param studentB
 	 */
+	
 	public void areFriends(String studentA, String studentB) {
 		if(students.contains(studentA) && students.contains(studentB)) {
 			int x = students.indexOf(studentA);
