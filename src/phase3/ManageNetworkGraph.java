@@ -25,6 +25,10 @@ public class ManageNetworkGraph implements IManageNetworkGraph {
 			for (int i=0; i<num; i++) {
 				lst_of_lstAdjacents.addLast(new LinkedList<Integer>());
 			}
+			
+			//Lo que hace el constructor es crear una lista enlazada de tipo students donde mete los correos de los estudiantes
+			//A parte, crea una lista de una lista, e inicia las listas que van dentro de la principal, inicializando solo el 
+			//mismo numero de ellas que estudiantes se hayan pasado.
 	}
 	
 	//searches the student and returns its index
