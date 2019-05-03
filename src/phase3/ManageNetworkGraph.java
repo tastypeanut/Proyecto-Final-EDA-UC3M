@@ -35,7 +35,7 @@ public class ManageNetworkGraph implements IManageNetworkGraph {
 	public int getIndex(String student) {
 		int index=-1;
 		
-		//to compplete
+		//to complete
 
 		return index;
 	}
