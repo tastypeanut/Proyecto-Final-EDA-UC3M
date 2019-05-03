@@ -50,6 +50,7 @@ public class ManageNetworkGraph implements IManageNetworkGraph {
 	 * creates a friendship relation between them. 
 	 * Keep in mind that friendship relation is a symmetric relationship.
 	 */
+	
 	public void addStudent(String student) {
 		if (!(student == null)) {
 			students.add(student);
@@ -63,9 +64,12 @@ public class ManageNetworkGraph implements IManageNetworkGraph {
 	 * @param studentB
 	 */
 	public void areFriends(String studentA, String studentB) {
-		
-	
-		//To complete
+		if(students.contains(studentA) && students.contains(studentB)) {
+			int x = students.indexOf(studentA);
+			int y = students.indexOf(studentB);
+			lst_of_lstAdjacents.get(x).add(y);
+			lst_of_lstAdjacents.get(y).add(x);
+		}
 	}
 
 	/**

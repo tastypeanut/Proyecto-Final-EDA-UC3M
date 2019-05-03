@@ -57,7 +57,7 @@ public class ManageNetworkGraphTest {
 	
 	}
 	
-	//@Test
+	@Test
 	public void testAreFriends() {
 		
 		graph.areFriends(null,null);
