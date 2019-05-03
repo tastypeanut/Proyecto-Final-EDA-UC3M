@@ -112,10 +112,12 @@ public class ManageNetworkList implements IManageNetworkList {
 					if (lst.isEmpty() || node1.prev == lst.header && node1.elem.email.compareTo(newStudent.email) >= 0) {
 						lst.addFirst(newStudent);
 						break;
-					} else if(!(node1.prev == lst.header || node1.next == lst.trailer) && node1.prev.elem.email.compareTo(newStudent.email) < 0 && node1.elem.email.compareTo(newStudent.email) >= 0){
+					} 
+					if(!(node1.prev == lst.header || node1.next == lst.trailer) && node1.prev.elem.email.compareTo(newStudent.email) < 0 && node1.elem.email.compareTo(newStudent.email) >= 0){
 						lst.insertAt(contador, newStudent);
 						break;
-					} else if (node1.next == lst.trailer && node1.elem.email.compareTo(newStudent.email) < 0) {
+					}
+					if (node1.next == lst.trailer && node1.elem.email.compareTo(newStudent.email) < 0) {
 						lst.addLast(newStudent);
 						break;
 					}
@@ -128,10 +130,12 @@ public class ManageNetworkList implements IManageNetworkList {
 					if (lst.isEmpty() || node1.prev == lst.header && node1.elem.email.compareTo(newStudent.email) <= 0) {
 						lst.addFirst(newStudent);
 						break;
-					} else if(!(node1.prev == lst.header || node1.next == lst.trailer) && node1.prev.elem.email.compareTo(newStudent.email) > 0 && node1.elem.email.compareTo(newStudent.email) <= 0){
+					}
+					if(!(node1.prev == lst.header || node1.next == lst.trailer) && node1.prev.elem.email.compareTo(newStudent.email) > 0 && node1.elem.email.compareTo(newStudent.email) <= 0){
 						lst.insertAt(contador1, newStudent);
 						break;
-					} else if (node1.next == lst.trailer && node1.elem.email.compareTo(newStudent.email) > 0) {
+					}
+					if (node1.next == lst.trailer && node1.elem.email.compareTo(newStudent.email) > 0) {
 						lst.addLast(newStudent);
 						break;
 					}

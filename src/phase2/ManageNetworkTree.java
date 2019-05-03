@@ -37,65 +37,21 @@ public class ManageNetworkTree implements IManageNetworkTree {
 	 * @return
 	 */
 	
-	/*
-	public StudentsList getOrderedList(StudentsTree tree) {
-		
-		StudentsList sL = new StudentsList();
-		for (int contador = 0; contador < sL.getSize(); contador++) {
-			inOrder(null, sL, null, null);
-		}
-		return sL;
-		
-        StudentsList sL = new StudentsList();
-        
-        BSTNode root = tree.root;
-		preorderlist(root, null);
-        
-        
-        return sL;
-    }
-
-	public void preorderlist(BSTNode node, StudentsList orderedlist) {
-		if (node != null) {
-			System.out.println(node.oStudent.email);
-			preorderlist(node.left, orderedlist);
-			preorderlist(node.right, orderedlist);
-		}
-	}
-	
-	public StudentsList inOrder(BSTNode node, StudentsList lst, DNode node1, Student newStudent) {
-
-		if (!(lst.isEmpty()) || !(lst == null)) {
-			int i = 0;
-			for (int contador = 0; contador < lst.getSize(); contador++) {
-				if (lst.isEmpty() || node1.prev == null && node1.elem.email.compareTo(newStudent.email) >= 0) {
-					lst.addFirst(newStudent);
-					break;
-				} else if (!(node1.prev == null || node1.next == null)
-						&& node1.prev.elem.email.compareTo(newStudent.email) < 0
-						&& node1.elem.email.compareTo(newStudent.email) >= 0) {
-					lst.insertAt(i, newStudent);
-					break;
-				} else if (node1.next == null && node1.elem.email.compareTo(newStudent.email) < 0) {
-					lst.addLast(newStudent);
-					break;
-				}
-				contador++;
-			}
-		}
-		return lst;
-	}
-	*/
-	
-	
 	public StudentsList getOrderedList(StudentsTree tree){
-		
-        StudentsList sL = new StudentsList();
-       
-        //To complete
+		StudentsList sL = new StudentsList();
+		if (tree != null) {
+			auxmethod(tree.root, sL);
+        }
         return sL;
     }
 	
+	public void auxmethod(BSTNode node, StudentsList list) {
+		if (node != null) {
+			auxmethod(node.left, list);
+			list.addLast(node.oStudent);
+			auxmethod(node.right, list);
+		}
+	}
 	
 	/**
 	 * This class has a parameter n as input and removes all students having a number of blocks equal or greater than n.

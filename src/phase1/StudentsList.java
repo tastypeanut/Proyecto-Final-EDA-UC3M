@@ -74,7 +74,7 @@ public class StudentsList implements IList {
 	 */
 	public void addLast(Student elem) {
 		if (this.contains(elem)) {
-			System.out.println(elem.email + " already exists into the social network. You cannot added it!!!");
+			System.out.println(elem.email + " already exists in the social network. You cannot add it!!!");
 			return;
 		}
 		DNode newNode = new DNode(elem);
