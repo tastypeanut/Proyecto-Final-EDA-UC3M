@@ -1,11 +1,11 @@
 package phase2;
 
-import static org.junit.Assert.assertNotNull;
+//import static org.junit.Assert.assertNotNull;
 
-import phase1.DNode;
+//import phase1.DNode;
 import phase1.StudentsList;
-import phase1.Student;
-import phase1.ManageNetworkList;
+//import phase1.Student;
+//import phase1.ManageNetworkList;
 
 public class ManageNetworkTree implements IManageNetworkTree {
 
@@ -36,15 +36,16 @@ public class ManageNetworkTree implements IManageNetworkTree {
 	 * 
 	 * @return
 	 */
+	
+	/*
 	public StudentsList getOrderedList(StudentsTree tree) {
 		
-<<<<<<< HEAD
 		StudentsList sL = new StudentsList();
 		for (int contador = 0; contador < sL.getSize(); contador++) {
 			inOrder(null, sL, null, null);
 		}
 		return sL;
-=======
+		
         StudentsList sL = new StudentsList();
         
         BSTNode root = tree.root;
@@ -61,20 +62,7 @@ public class ManageNetworkTree implements IManageNetworkTree {
 			preorderlist(node.right, orderedlist);
 		}
 	}
-
 	
-	/**
-	 * This class has a parameter n as input and removes all students having a number of blocks equal or greater than n.
-	 * @param num
-	 */
-	
-	public void deleteByNumberOfBlocks(StudentsTree tree, int num) {
-		BSTNode root = tree.root;
-		preorder(root, num, tree);
->>>>>>> branch 'master' of https://github.com/tastypeanut/Proyecto-Final-EDA-UC3M.git
-	}
-<<<<<<< HEAD
-
 	public StudentsList inOrder(BSTNode node, StudentsList lst, DNode node1, Student newStudent) {
 
 		if (!(lst.isEmpty()) || !(lst == null)) {
@@ -97,19 +85,28 @@ public class ManageNetworkTree implements IManageNetworkTree {
 		}
 		return lst;
 	}
-
+	*/
+	
+	
+	public StudentsList getOrderedList(StudentsTree tree){
+		
+        StudentsList sL = new StudentsList();
+       
+        //To complete
+        return sL;
+    }
+	
+	
 	/**
-	 * This class has a parameter n as input and removes all students having a
-	 * number of blocks equal or greater than n.
-	 * 
+	 * This class has a parameter n as input and removes all students having a number of blocks equal or greater than n.
 	 * @param num
 	 */
 
 	public void deleteByNumberOfBlocks(StudentsTree tree, int num) {
-
+		BSTNode root = tree.root;
+		preorder(root, num, tree);
 	}
-=======
-	
+
 	public void preorder(BSTNode node, int n, StudentsTree tree) {
 		if (node != null) {
 			preorder(node.left, n, tree);
@@ -120,6 +117,4 @@ public class ManageNetworkTree implements IManageNetworkTree {
 		}
 	}
 	
->>>>>>> branch 'master' of https://github.com/tastypeanut/Proyecto-Final-EDA-UC3M.git
-
 }
