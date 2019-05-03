@@ -31,9 +31,20 @@ public class ManageNetworkTree implements IManageNetworkTree {
 		
         StudentsList sL = new StudentsList();
         
+        BSTNode root = tree.root;
+		preorderlist(root, null);
+        
+        
         return sL;
     }
 
+	public void preorderlist(BSTNode node, StudentsList orderedlist) {
+		if (node != null) {
+			System.out.println(node.oStudent.email);
+			preorderlist(node.left, orderedlist);
+			preorderlist(node.right, orderedlist);
+		}
+	}
 
 	
 	/**

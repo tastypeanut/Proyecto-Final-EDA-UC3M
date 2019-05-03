@@ -130,7 +130,7 @@ public class ManageNetworkTreeTest {
 	
 	}
 	
-		//@Test
+		@Test
 		public void testgetOrderedList() {
 			
 			
@@ -151,7 +151,7 @@ public class ManageNetworkTreeTest {
 		
 		}
 
-		@Test
+		//@Test
 		public void testdeleteByNumberOfBlocks() {
 			
 		objManage.deleteByNumberOfBlocks(tree_1, 3);
