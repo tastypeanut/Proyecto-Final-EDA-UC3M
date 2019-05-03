@@ -38,12 +38,42 @@ public class ManageNetworkTree implements IManageNetworkTree {
 	 */
 	public StudentsList getOrderedList(StudentsTree tree) {
 		
+<<<<<<< HEAD
 		StudentsList sL = new StudentsList();
 		for (int contador = 0; contador < sL.getSize(); contador++) {
 			inOrder(null, sL, null, null);
 		}
 		return sL;
+=======
+        StudentsList sL = new StudentsList();
+        
+        BSTNode root = tree.root;
+		preorderlist(root, null);
+        
+        
+        return sL;
+    }
+
+	public void preorderlist(BSTNode node, StudentsList orderedlist) {
+		if (node != null) {
+			System.out.println(node.oStudent.email);
+			preorderlist(node.left, orderedlist);
+			preorderlist(node.right, orderedlist);
+		}
 	}
+
+	
+	/**
+	 * This class has a parameter n as input and removes all students having a number of blocks equal or greater than n.
+	 * @param num
+	 */
+	
+	public void deleteByNumberOfBlocks(StudentsTree tree, int num) {
+		BSTNode root = tree.root;
+		preorder(root, num, tree);
+>>>>>>> branch 'master' of https://github.com/tastypeanut/Proyecto-Final-EDA-UC3M.git
+	}
+<<<<<<< HEAD
 
 	public StudentsList inOrder(BSTNode node, StudentsList lst, DNode node1, Student newStudent) {
 
@@ -78,5 +108,18 @@ public class ManageNetworkTree implements IManageNetworkTree {
 	public void deleteByNumberOfBlocks(StudentsTree tree, int num) {
 
 	}
+=======
+	
+	public void preorder(BSTNode node, int n, StudentsTree tree) {
+		if (node != null) {
+			preorder(node.left, n, tree);
+			preorder(node.right, n, tree);
+			if (node.oStudent.blocks >= n) {
+				tree.removeStudent(node.oStudent.email);
+			}
+		}
+	}
+	
+>>>>>>> branch 'master' of https://github.com/tastypeanut/Proyecto-Final-EDA-UC3M.git
 
 }
