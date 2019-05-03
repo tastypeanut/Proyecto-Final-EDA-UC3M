@@ -151,7 +151,7 @@ public class ManageNetworkTreeTest {
 		
 		}
 
-		//@Test
+		@Test
 		public void testdeleteByNumberOfBlocks() {
 			
 		objManage.deleteByNumberOfBlocks(tree_1, 3);
@@ -160,7 +160,7 @@ public class ManageNetworkTreeTest {
 		
 		}
 		
-		//@Test
+		@Test
 		public void testcopySocialNetwork() {
 		
 			objManage.copySocialNetwork(tree_2, emptyList);

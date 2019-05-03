@@ -45,7 +45,7 @@ public class ManageNetworkTree implements IManageNetworkTree {
         return sL;
     }
 	
-	public void auxmethod(BSTNode node, StudentsList list) {
+	protected void auxmethod(BSTNode node, StudentsList list) {
 		if (node != null) {
 			auxmethod(node.left, list);
 			list.addLast(node.oStudent);
@@ -63,7 +63,7 @@ public class ManageNetworkTree implements IManageNetworkTree {
 		preorder(root, num, tree);
 	}
 
-	public void preorder(BSTNode node, int n, StudentsTree tree) {
+	protected void preorder(BSTNode node, int n, StudentsTree tree) {
 		if (node != null) {
 			preorder(node.left, n, tree);
 			preorder(node.right, n, tree);
