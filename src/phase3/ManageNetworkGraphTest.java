@@ -80,7 +80,7 @@ public class ManageNetworkGraphTest {
 		
 	}
 	
-	//@Test
+	@Test
 	public void testGetDirectFriends() {
 		
 		LinkedList<String> lDirectFriends = graph.getDirectFriends(null);
@@ -97,7 +97,7 @@ public class ManageNetworkGraphTest {
 		
 	}
 
-	//@Test
+	@Test
 	public void testSuggestedFriends() {
 		
 		LinkedList<String> lSuggestedFriends = graph.suggestedFriends(null);

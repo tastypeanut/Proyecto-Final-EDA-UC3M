@@ -10,7 +10,7 @@ public class ManageNetworkGraph implements IManageNetworkGraph {
 	
 	public LinkedList<String> students;
 	LinkedList<LinkedList<Integer>> lst_of_lstAdjacents;
-		
+	
 	public ManageNetworkGraph(String[] students) {
 			this.students=new LinkedList<String>();
 			for(int k=0; k < students.length; k++) {
@@ -26,23 +26,22 @@ public class ManageNetworkGraph implements IManageNetworkGraph {
 				lst_of_lstAdjacents.addLast(new LinkedList<Integer>());
 			}
 			
-			//Lo que hace el constructor es crear una lista enlazada de tipo students donde mete los correos de los estudiantes
-			//A parte, crea una lista de una lista, e inicia las listas que van dentro de la principal, inicializando solo el 
-			//mismo numero de ellas que estudiantes se hayan pasado.
 	}
 	
 	//searches the student and returns its index
 	public int getIndex(String student) {
 		int index=-1;
-		
-		//to complete
-
+		if (student != null) {
+			return this.students.indexOf(student);
+		}
 		return index;
 	}
+	
 	//checks if index is right and returns its associated city
 	public String checkVertex(int index) {
-		//to complete
-		return null;
+		if (index >= 0 && index < students.size()) {
+			return students.get(index);
+		} else return null;
 	}
 	
 	/**
@@ -72,35 +71,53 @@ public class ManageNetworkGraph implements IManageNetworkGraph {
 			lst_of_lstAdjacents.get(y).add(x);
 		}
 	}
-
+	
 	/**
 	 * This takes a student (email), and returns an object of LinkedList<String>, 
 	 * which contains the emails of his/her direct friends.
 	 * @param studentA
 	 * @return
 	 */
+	
 	public LinkedList<String> getDirectFriends(String studentA){
 		
 		LinkedList<String> lDirectFriends = new LinkedList<String>();
 		//to complete
 		
+		
 		return lDirectFriends;
 	}
 	
 	
-	
-	public int[] getAdjacents(int i) {
-		//to complete
-		return null;
+	public int[] getAdjacents(int position){
+		int[] adjacents = new int[lst_of_lstAdjacents.get(position).size()]; //creamos una matriz del tamaño del numero de amigos que tenga una persona
+		for (int counter = 0; counter < adjacents.length; counter++){
+			adjacents[counter] = lst_of_lstAdjacents.get(position).get(counter);
+		}
+		return adjacents;
 	}
-	
-	
+
 	
 	public LinkedList<String> suggestedFriends(String studentA){
 		LinkedList<String> lSuggestedFriends = new LinkedList<String>();
-		//to complete
+		if (students.contains(studentA) && studentA != null) {
+			LinkedList<Integer> SuggestedFriendsIds;
+			boolean[] visited = new boolean[students.size()];
+			SuggestedFriendsIds = depth(students.indexOf(studentA), visited);
+			if(SuggestedFriendsIds != null && SuggestedFriendsIds.size() >0) {
+				for (int counter = 0; counter < SuggestedFriendsIds.size(); counter++) {
+					lSuggestedFriends.add(counter, (students.get(SuggestedFriendsIds.get(counter))));
+				}
+			}
+			int[] adjacents = getAdjacents(students.indexOf(studentA));
+			lSuggestedFriends.remove(lSuggestedFriends.indexOf((students.get(students.indexOf(studentA)))));
+			for (int positions : adjacents) {
+				lSuggestedFriends.remove(lSuggestedFriends.indexOf((students.get(positions))));
+			}
+		}
 		return lSuggestedFriends;
 	}
+	
 	
 	public LinkedList<Integer> depth(int i, boolean[] visited) {
 		LinkedList<Integer> path=new LinkedList<Integer>();
@@ -108,17 +125,23 @@ public class ManageNetworkGraph implements IManageNetworkGraph {
 	}
 	
 
-	protected LinkedList<Integer> depth(int i,boolean[] visited, LinkedList<Integer> path) {
-		//to compelte
+	protected LinkedList<Integer> depth(int i,boolean[] visited, LinkedList<Integer> path) { //path es las personas
+		if (!visited[i]){
+			path.add(i);
+			visited[i] = true;
+			for (int positions : getAdjacents(i)) {
+				depth(positions, visited, path);
+			}
+		}
 		return path;
 	}
 	
+	
 	public void show() {
-		//to complate
+		//to complete
 	}
 	
 	public static void main(String args[]) {
 		
-	}
-	
+	}	
 }
