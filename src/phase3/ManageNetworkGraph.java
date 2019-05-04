@@ -79,12 +79,16 @@ public class ManageNetworkGraph implements IManageNetworkGraph {
 	 * @return
 	 */
 	
-	public LinkedList<String> getDirectFriends(String studentA){
-		
+	public LinkedList<String> getDirectFriends(String studentA) {
 		LinkedList<String> lDirectFriends = new LinkedList<String>();
-		//to complete
-		
-		
+		int x = students.indexOf(studentA);
+		if (students.contains(studentA) && (x != -1)) {
+			for (int i = 0; i < lst_of_lstAdjacents.get(x).size(); i++) {
+				int y = lst_of_lstAdjacents.get(x).get(i);
+				String studentB = students.get(y);
+				lDirectFriends.add(studentB);
+			}
+		}
 		return lDirectFriends;
 	}
 	
