@@ -1,11 +1,6 @@
 package phase2;
 
-//import static org.junit.Assert.assertNotNull;
-
-//import phase1.DNode;
 import phase1.StudentsList;
-//import phase1.Student;
-//import phase1.ManageNetworkList;
 
 public class ManageNetworkTree implements IManageNetworkTree {
 

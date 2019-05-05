@@ -2,11 +2,7 @@ package phase3;
 
 import java.util.LinkedList;
 
-
-
 public class ManageNetworkGraph implements IManageNetworkGraph {
-	
-	
 	
 	public LinkedList<String> students;
 	LinkedList<LinkedList<Integer>> lst_of_lstAdjacents;
@@ -92,7 +88,6 @@ public class ManageNetworkGraph implements IManageNetworkGraph {
 		return lDirectFriends;
 	}
 	
-	
 	public int[] getAdjacents(int position){
 		int[] adjacents = new int[lst_of_lstAdjacents.get(position).size()]; //creamos una matriz del tamaño del numero de amigos que tenga una persona
 		for (int counter = 0; counter < adjacents.length; counter++){
@@ -101,7 +96,6 @@ public class ManageNetworkGraph implements IManageNetworkGraph {
 		return adjacents;
 	}
 
-	
 	public LinkedList<String> suggestedFriends(String studentA){
 		LinkedList<String> lSuggestedFriends = new LinkedList<String>();
 		if (students.contains(studentA) && studentA != null) {
@@ -122,12 +116,10 @@ public class ManageNetworkGraph implements IManageNetworkGraph {
 		return lSuggestedFriends;
 	}
 	
-	
 	public LinkedList<Integer> depth(int i, boolean[] visited) {
 		LinkedList<Integer> path=new LinkedList<Integer>();
 		return depth(i,visited, path);
 	}
-	
 
 	protected LinkedList<Integer> depth(int i,boolean[] visited, LinkedList<Integer> path) { //path es las personas
 		if (!visited[i]){
@@ -140,12 +132,10 @@ public class ManageNetworkGraph implements IManageNetworkGraph {
 		return path;
 	}
 	
-	
 	public void show() {
 		//to complete
 	}
 	
 	public static void main(String args[]) {
-		
 	}	
 }
