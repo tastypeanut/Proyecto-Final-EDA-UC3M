@@ -3,5 +3,5 @@ Esto es el repositorio para nuestro tabajo final de la asignatura de EDA (Estruc
 
 ## Autores
 
-* *****REMOVED***** - [***REMOVED***](https://github.com/***REMOVED***)
+* **Myriam ***REMOVED*** ***REMOVED***** - [marianalruiz](https://github.com/marianalruiz)
 * **Enrique ***REMOVED***** - [tastypeanut](https://github.com/tastypeanut)
