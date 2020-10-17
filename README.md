@@ -1,7 +1,11 @@
-# Proyecto-Final-EDA-UC3M
-Esto es el repositorio para nuestro tabajo final de la asignatura de EDA (Estructuras de Datos y Algoritmos), de la Universidad Carlos III de Madrid.
+# :es: UC3M - Proyecto Final de EDA
+Esto es el repositorio para nuestro tabajo final de la asignatura de EDA (Estructuras de Datos y Algoritmos).
+# :uk: UC3M - DSA Final Project
+This is the repository for our final DSA (Data Structures and Algorithms) project.
 
-## Autores
 
-* **Myriam ***REMOVED*** ***REMOVED***** - [marianalruiz](https://github.com/marianalruiz)
-* **Enrique ***REMOVED***** - [tastypeanut](https://github.com/tastypeanut)
+## Autores/Authors
+
+* **Myriam** - [marianalruiz](https://github.com/marianalruiz)
+* **Enrique** - [tastypeanut](https://github.com/tastypeanut)
+
